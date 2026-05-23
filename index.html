@@ -203,10 +203,10 @@
                     let addedFacility = 0; 
                     
                     if (neighbor !== startNode) {
-                        playTime = graph.vertices[neighbor].playTime;
-                        entranceFee = graph.vertices[neighbor].fee;
-                        if (playTime > 0) addedFacility = 1; 
-                    }
+                    playTime = graph.vertices[neighbor].playTime;
+                    entranceFee = graph.vertices[neighbor].fee;
+                    addedFacility = 1;  // 只要走到新的節點，一律算造訪 1 個站點
+                }
 
                     if (currentTime + travelTime + playTime > maxTime) continue;
                     if (currentCost + transportFee + entranceFee > maxBudget) continue;
